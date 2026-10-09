@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Lidia Oliveira · Dentista no Gama</title>
+<meta name="description" content="Consultório Odontológico Dra. Lidia Oliveira no Gama – DF. Atendimento acolhedor e humanizado: consultas, prevenção, limpeza, restaurações e clareamento dental, com hora marcada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241f1e;
+  --ink-2:#4a403d;
+  --muted:#6b605c;
+  --accent:#9b3f55;
+  --accent-deep:#7a2c40;
+  --accent-soft:#f6e9ec;
+  --sand:#f5f1ee;
+  --stone:#e8e1dc;
+  --paper:#ffffff;
+  --line:rgba(36,31,30,.12);
+  --radius:24px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --serif:"Gloock",Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+.ic{width:20px;height:20px;flex:none}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.6rem,5.6vw,4.6rem)}
+h2 i,h1 i{font-style:normal;color:var(--accent)}
+.section{padding:96px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:28px;flex-wrap:wrap;margin-bottom:56px}
+.head p{max-width:400px;color:var(--muted)}
+
+/* nav */
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:60;width:min(1200px,100% - 24px);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 8px 8px 22px;border-radius:999px;background:rgba(255,255,255,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);transition:box-shadow .4s var(--ease)}
+.nav.scrolled{box-shadow:0 14px 34px -20px rgba(0,0,0,.35)}
+.brand{line-height:1}
+.brand b{display:block;font-family:var(--serif);font-weight:400;font-size:1.55rem}
+.brand small{display:block;font-size:.72rem;font-weight:600;color:var(--muted);margin-top:2px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:.92rem;font-weight:500;color:var(--ink-2)}
+.nav ul a:hover{color:var(--accent)}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:background .3s,color .3s,box-shadow .35s var(--ease);white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 16px 30px -16px rgba(0,0,0,.45)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:var(--sand)}
+.nav .btn{padding:10px 18px;font-size:.88rem}
+.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;width:20px;height:1.5px;background:var(--ink);margin:5px auto}
+
+/* hero */
+.hero{min-height:100svh;padding:132px 0 70px;display:grid;align-items:center;background:linear-gradient(180deg,var(--sand),#fff 70%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(3.2rem,7.4vw,6.2rem)}
+.hero h1 .w{display:inline-block}
+.smile-word{position:relative;display:inline-block}
+.smile-line{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.32em;overflow:visible;color:var(--accent)}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:520px;margin-top:26px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.facts{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:44px;font-size:.84rem;color:var(--muted)}
+.facts strong{display:flex;align-items:center;gap:8px;font-family:var(--serif);font-weight:400;font-size:1.65rem;color:var(--ink);line-height:1.2}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--muted);flex:none}
+.is-open .dot{background:#1f9d55}
+.arch{position:relative;justify-self:center;width:min(100%,500px)}
+.arch-frame{aspect-ratio:4/5;border-radius:999px 999px var(--radius) var(--radius);overflow:hidden;background:var(--stone)}
+.arch-frame img{width:100%;height:118%;object-fit:cover;object-position:35% 50%;will-change:transform}
+.float-card{position:absolute;left:-34px;bottom:44px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 24px 46px -26px rgba(0,0,0,.4);font-size:.82rem;color:var(--muted)}
+.float-card b{display:block;font-size:1rem;color:var(--ink)}
+.float-card .ic-wrap{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.float-card.f2{left:auto;right:-26px;top:54px;bottom:auto}
+
+/* statement */
+.statement{background:var(--sand);padding:96px 0}
+.quote{max-width:860px;margin-inline:auto;text-align:center}
+.quote-mark{width:46px;height:36px;margin:0 auto 26px;color:var(--accent)}
+.quote blockquote p{font-family:var(--serif);font-size:clamp(1.65rem,3.1vw,2.5rem);line-height:1.35;color:var(--ink);text-wrap:balance}
+.quote mark{color:inherit;background:linear-gradient(transparent 62%,rgba(155,63,85,.22) 62%,rgba(155,63,85,.22) 92%,transparent 92%) no-repeat 0 0/100% 100%;padding:0 .08em}
+.quote figcaption{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.sig{font-family:var(--serif);font-size:1.5rem;color:var(--accent)}
+.sig-role{font-size:.85rem;color:var(--muted)}
+.pillars{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:34px}
+.pillars li{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.9rem;font-weight:600;color:var(--ink-2)}
+.pillars .ic{width:18px;height:18px;color:var(--accent)}
+
+/* services: horizontal track */
+.svc{background:var(--ink);color:#f7f2ef;overflow:hidden}
+.svc .head p{color:rgba(247,242,239,.72)}
+.svc h2 i{color:#f0a9b8}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{position:relative;border-radius:var(--radius);padding:34px 30px;min-height:340px;display:flex;flex-direction:column;background:#2f2827;border:1px solid rgba(255,255,255,.08);overflow:hidden;isolation:isolate}
+.svc-card::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(360px circle at var(--mx,-999px) var(--my,-999px),rgba(240,169,184,.16),transparent 60%);transition:opacity .3s}
+.svc-card .num{font-family:var(--serif);font-size:4.5rem;line-height:1;color:rgba(247,242,239,.16)}
+.svc-card .ic-big{width:46px;height:46px;color:#f0a9b8;margin:auto 0 20px}
+.svc-card h3{font-size:2.2rem;margin-bottom:10px}
+.svc-card p{color:rgba(247,242,239,.7);font-size:.95rem}
+.svc-card.cta-card{background:var(--accent);border-color:transparent}
+.svc-card.cta-card p{color:rgba(255,255,255,.88)}
+.svc-card.cta-card .btn{margin-top:22px;align-self:flex-start;background:#fff;color:var(--accent)}
+.horizontal{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:96px 0 56px}
+.horizontal .head{margin-bottom:40px}
+.horizontal .track{display:flex;width:max-content;gap:24px;padding-right:20px}
+.horizontal .svc-card{width:min(400px,80vw);min-height:min(420px,52vh)}
+
+/* compare */
+.result-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.compare{position:relative;aspect-ratio:680/687;max-width:560px;width:100%;border-radius:var(--radius);overflow:hidden;user-select:none;touch-action:pan-y;cursor:ew-resize;background:#111;box-shadow:0 34px 60px -34px rgba(0,0,0,.5)}
+.cmp-layer{position:absolute;inset:0;background:url(img/antes-depois.webp) no-repeat;background-size:200% 100%}
+.cmp-before{background-position:0 0}
+.cmp-after{background-position:100% 0;clip-path:inset(0 0 0 var(--pos,50%))}
+.cmp-tag{position:absolute;top:16px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.94);font-size:.8rem;font-weight:700;pointer-events:none}
+.cmp-tag.l{left:16px}.cmp-tag.r{right:16px}
+.cmp-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+.cmp-handle svg{position:absolute;top:50%;left:50%;width:46px;height:46px;padding:12px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;color:var(--accent);box-shadow:0 8px 22px -6px rgba(0,0,0,.45)}
+.cmp-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.compare:focus-within .cmp-handle svg{outline:2px solid var(--accent);outline-offset:3px}
+.result-grid p{color:var(--muted);margin:22px 0 30px;max-width:46ch}
+
+/* care */
+.care{background:var(--sand)}
+.care-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.care-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3.4;background:var(--stone)}
+.care-photo img{width:100%;height:120%;object-fit:cover;object-position:50% 35%;will-change:transform}
+.values{list-style:none;margin-top:34px;display:grid;gap:22px}
+.values li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start}
+.values .ic-wrap{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:#fff;color:var(--accent);border:1px solid var(--line)}
+.values b{display:block;font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.1}
+.values span{color:var(--muted);font-size:.95rem}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+details{border-bottom:1px solid var(--line);padding:24px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--serif);font-size:1.75rem;line-height:1.2}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--accent);transition:transform .45s var(--ease),background .3s}
+details[open] summary .plus{transform:rotate(45deg);background:var(--accent-soft)}
+details .ans{color:var(--muted);padding-top:12px;max-width:600px}
+
+/* cta + info */
+.cta{padding:0 0 110px}
+.cta-box{position:relative;overflow:hidden;border-radius:40px;padding:96px 48px;text-align:center;background:var(--ink);color:#f7f2ef}
+.cta-box h2{max-width:880px;margin:0 auto 20px}
+.cta-box h2 i{color:#f0a9b8}
+.cta-box p{color:rgba(247,242,239,.78);max-width:520px;margin:0 auto 34px}
+.cta-box .ctas{justify-content:center}
+.cta-box .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.cta-box .btn-ghost:hover{background:rgba(255,255,255,.08)}
+.cta-ring{position:absolute;border-radius:50%;border:1px solid rgba(240,169,184,.18);pointer-events:none}
+.cta-ring.r1{width:620px;height:620px;left:-220px;top:-320px}
+.cta-ring.r2{width:460px;height:460px;right:-160px;bottom:-240px}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.info>div{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.info h3{font-family:Manrope,sans-serif;font-size:.82rem;font-weight:700;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.info p{font-weight:500}
+.info a.u{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.info a.u:hover{color:var(--accent)}
+.hours{list-style:none;font-size:.95rem}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-variant-numeric:tabular-nums}
+.hours li.today{color:var(--accent);font-weight:700}
+.pill{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:6px 12px;border-radius:999px;background:var(--sand);font-size:.82rem;font-weight:700}
+.route{display:inline-flex;margin-top:12px;font-weight:700;font-size:.9rem;color:var(--accent)}
+footer{border-top:1px solid var(--line);padding:34px 0;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600}
+.fab{position:fixed;right:20px;bottom:20px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 28px -12px rgba(0,0,0,.45);transition:transform .3s var(--ease)}
+.fab:hover{transform:scale(1.08)}
+
+@media (max-width:960px){
+  .nav ul,.nav .btn{display:none}
+  .burger{display:block}
+  .nav.open{border-radius:26px;flex-wrap:wrap}
+  .nav.open ul{order:3;display:flex;flex-direction:column;width:100%;gap:16px;padding:14px 4px 10px}
+  .nav.open .btn{order:4;display:inline-flex;width:100%;justify-content:center;margin-bottom:6px}
+  .hero-grid,.result-grid,.care-grid,.faq-grid{grid-template-columns:1fr}
+  .arch{width:min(100%,420px)}
+  .float-card{left:0}.float-card.f2{right:0}
+  .track{grid-template-columns:1fr 1fr}
+  .info{grid-template-columns:1fr}
+  .section{padding:88px 0}
+}
+@media (max-width:600px){
+  .track{grid-template-columns:1fr}
+  .svc-card{min-height:250px}
+  .cta-box{padding:64px 22px}
+  footer{padding-bottom:100px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.7-2.7-1.1-4.4-3.8-4.5-4-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5l1.5-2 4 1.5V19a1.5 1.5 0 0 1-1.5 1.5A16.5 16.5 0 0 1 3.5 5.5 1.5 1.5 0 0 1 5 4z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5c-3.5 0-6.5 1.4-6.5 1.4v6.3c0 5 3.6 8 6.5 9.3 2.9-1.3 6.5-4.3 6.5-9.3V4.9S15.5 3.5 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v10H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 9.5h8M8 12h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-brush" viewBox="0 0 24 24"><path d="M4 20l9.5-9.5M13.5 10.5l2-2 4 4-2 2zM15.5 8.5l2-4.5 2.5 2.5-4.5 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-tooth" viewBox="0 0 24 24"><path d="M7 3.5c-2 0-3 1.6-3 3.4 0 2.6 1.5 3.6 2 6l1 7.6h1.8l1.2-5.2h4l1.2 5.2H17l1-7.6c.5-2.4 2-3.4 2-6 0-1.8-1-3.4-3-3.4-1.8 0-3 .9-5 .9s-3.2-.9-5-.9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fill" viewBox="0 0 24 24"><path d="M7 3.5c-2 0-3 1.6-3 3.4 0 2.6 1.5 3.6 2 6l1 7.6h1.8l1.2-5.2h4l1.2 5.2H17l1-7.6c.5-2.4 2-3.4 2-6 0-1.8-1-3.4-3-3.4-1.8 0-3 .9-5 .9s-3.2-.9-5-.9z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="8.5" r="2" fill="currentColor"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M15 15l5 5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrows" viewBox="0 0 24 24"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Principal">
+  <a href="#top" class="brand"><b>Dra. Lidia Oliveira</b><small>Odontologia · Gama – DF</small></a>
+  <ul>
+    <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#resultado">Resultado</a></li>
+    <li><a href="#atendimento">Atendimento</a></li>
+    <li><a href="#duvidas">Dúvidas</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a class="btn btn-primary" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener">Agendar consulta</a>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="heroTitle">Cuidado acolhedor para o seu <span class="smile-word"><i>sorriso</i><svg class="smile-line" viewBox="0 0 200 30" preserveAspectRatio="none" aria-hidden="true"><path id="smilePath" d="M4 6 Q100 40 196 6" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span>.</h1>
+      <p class="lead" data-hero>Atendimento humanizado e de qualidade no Gama, com hora marcada. Consultas, prevenção, limpeza, restaurações e clareamento, sempre com foco na sua saúde bucal e no seu bem-estar.</p>
+      <div class="ctas" data-hero>
+        <a class="btn btn-primary magnetic" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn btn-ghost magnetic" href="#resultado">Ver resultado</a>
+      </div>
+      <div class="facts" data-hero>
+        <div><strong>Hora marcada</strong>sem espera na recepção</div>
+        <div id="heroStatus"><strong><span class="dot"></span><span data-status-label>Horário</span></strong><span data-status-sub>seg a sex 8h–19h · sáb 8h–14h</span></div>
+      </div>
+    </div>
+    <div class="arch" data-hero>
+      <div class="arch-frame"><img id="heroImg" src="img/consultorio.webp" alt="Consultório da Dra. Lidia Oliveira com cadeira odontológica, bancada em mármore e iluminação suave"></div>
+      <div class="float-card f2"><span class="ic-wrap"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Atendimento humanizado</b>Cuidado individual</div></div>
+      <div class="float-card"><span class="ic-wrap"><svg class="ic"><use href="#i-pin"/></svg></span><div><b>Setor Leste · Gama</b>Quadra 40</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section statement">
+  <div class="wrap">
+    <figure class="quote" id="quote">
+      <svg class="quote-mark" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V22C0 9.6 6.4 2.2 19.2 0l2 5C14.6 7 11.4 10.8 11 16.4h9.6V36zm27 0V22C27 9.6 33.4 2.2 46.2 0l1.8 5c-6.6 2-9.8 5.8-10.2 11.4H47V36z" fill="currentColor"/></svg>
+      <blockquote>
+        <p>Uma dentista dedicada a oferecer um atendimento <mark>acolhedor</mark>, <mark>humanizado</mark> e <mark>de qualidade</mark>, prezando pela ética, pelo conforto e pelo cuidado individualizado de cada paciente.</p>
+      </blockquote>
+      <figcaption>
+        <span class="sig">Dra. Lidia Oliveira</span>
+        <span class="sig-role">Cirurgiã-dentista · Gama – DF</span>
+      </figcaption>
+      <ul class="pillars" aria-label="Diferenciais">
+        <li><svg class="ic"><use href="#i-heart"/></svg>Escuta atenta</li>
+        <li><svg class="ic"><use href="#i-cal"/></svg>Hora marcada</li>
+        <li><svg class="ic"><use href="#i-shield"/></svg>Ética e segurança</li>
+      </ul>
+    </figure>
+  </div>
+</section>
+
+<section class="section svc" id="tratamentos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Tratamentos para cuidar de <i>você</i>.</h2>
+      <p>Da consulta de rotina ao clareamento. Toque em um tratamento para falar com a Dra. Lidia pelo WhatsApp.</p>
+    </div>
+  </div>
+  <div class="track-wrap" id="trackWrap">
+    <div class="wrap">
+      <div class="track" id="track">
+        <a class="svc-card" href="https://wa.me/5561982177490?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg class="ic-big"><use href="#i-search"/></svg><h3>Consultas</h3><p>Avaliação completa e conversa sem pressa sobre o seu sorriso.</p></a>
+        <a class="svc-card" href="https://wa.me/5561982177490?text=Ol%C3%A1!%20Quero%20saber%20sobre%20preven%C3%A7%C3%A3o." target="_blank" rel="noopener"><svg class="ic-big"><use href="#i-shield"/></svg><h3>Prevenção</h3><p>Orientação e acompanhamento para evitar problemas antes que apareçam.</p></a>
+        <a class="svc-card" href="https://wa.me/5561982177490?text=Ol%C3%A1!%20Quero%20agendar%20uma%20limpeza." target="_blank" rel="noopener"><svg class="ic-big"><use href="#i-brush"/></svg><h3>Limpeza</h3><p>Remoção de placa e tártaro para dentes e gengivas saudáveis.</p></a>
+        <a class="svc-card" href="https://wa.me/5561982177490?text=Ol%C3%A1!%20Quero%20saber%20sobre%20restaura%C3%A7%C3%B5es." target="_blank" rel="noopener"><svg class="ic-big"><use href="#i-fill"/></svg><h3>Restaurações</h3><p>Recuperam dentes com cárie ou desgaste, na cor natural do dente.</p></a>
+        <a class="svc-card" href="https://wa.me/5561982177490?text=Ol%C3%A1!%20Quero%20saber%20sobre%20clareamento%20dental." target="_blank" rel="noopener"><svg class="ic-big"><use href="#i-sparkle"/></svg><h3>Clareamento dental</h3><p>Um sorriso mais claro, com segurança e acompanhamento.</p></a>
+        <div class="svc-card cta-card"><svg class="ic-big" style="color:#fff"><use href="#i-tooth"/></svg><h3>E outros tratamentos</h3><p>Conte o que você precisa e a Dra. Lidia indica o melhor caminho.</p><a class="btn" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Tenho%20uma%20d%C3%BAvida%20sobre%20um%20tratamento." target="_blank" rel="noopener">Falar com a doutora</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="resultado">
+  <div class="wrap result-grid">
+    <div class="compare" id="compare">
+      <div class="cmp-layer cmp-before" role="img" aria-label="Antes: dentes desgastados e falhas no sorriso"></div>
+      <div class="cmp-layer cmp-after" role="img" aria-label="Depois: sorriso completo e harmonioso"></div>
+      <span class="cmp-tag l">Antes</span><span class="cmp-tag r">Depois</span>
+      <div class="cmp-handle" aria-hidden="true"><svg><use href="#i-arrows"/></svg></div>
+      <input type="range" class="cmp-range" id="cmpRange" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
+    </div>
+    <div>
+      <h2 data-up>Um sorriso novo, <i>uma nova confiança</i>.</h2>
+      <p data-up>Arraste a barra e compare o antes e o depois de um paciente. Cada tratamento é planejado de forma individual, para um resultado natural e confortável.</p>
+      <a data-up class="btn btn-primary magnetic" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Quero%20transformar%20meu%20sorriso." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Quero transformar meu sorriso</a>
+    </div>
+  </div>
+</section>
+
+<section class="section care" id="atendimento">
+  <div class="wrap care-grid">
+    <div class="care-photo"><img id="careImg" src="img/atendimento.webp" alt="Dentistas de touca e avental realizando um procedimento com cuidado" loading="lazy"></div>
+    <div>
+      <h2 data-up>Atendimento com <i>ética, conforto</i> e cuidado.</h2>
+      <ul class="values">
+        <li data-up><span class="ic-wrap"><svg class="ic"><use href="#i-heart"/></svg></span><div><b>Acolhedor e humanizado</b><span>Você é ouvido e cada etapa é explicada com calma.</span></div></li>
+        <li data-up><span class="ic-wrap"><svg class="ic"><use href="#i-cal"/></svg></span><div><b>Com hora marcada</b><span>Seu horário é respeitado, sem longas esperas.</span></div></li>
+        <li data-up><span class="ic-wrap"><svg class="ic"><use href="#i-shield"/></svg></span><div><b>Cuidado individualizado</b><span>Um plano pensado para a sua saúde bucal e o seu bem-estar.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="duvidas">
+  <div class="wrap faq-grid">
+    <h2 data-up>Dúvidas <i>frequentes</i>.</h2>
+    <div data-up>
+      <details open><summary>Como faço para agendar?<span class="plus"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></summary><div class="ans">Pelo WhatsApp (61) 98217-7490. O atendimento é com horário agendado, para você ser atendido sem espera.</div></details>
+      <details><summary>Onde fica o consultório?<span class="plus"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></summary><div class="ans">Setor Leste, Quadra 40, no Gama – DF. O botão “Como chegar” abre a rota no Google Maps.</div></details>
+      <details><summary>Atende aos sábados?<span class="plus"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></summary><div class="ans">Sim, sábado das 8h às 14h. De segunda a sexta, das 8h às 19h.</div></details>
+      <details><summary>Faz clareamento dental?<span class="plus"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></summary><div class="ans">Sim. A Dra. Lidia avalia o seu caso e indica a técnica mais segura para um resultado natural.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contato">
+  <div class="wrap">
+    <div class="cta-box" data-up>
+      <span class="cta-ring r1"></span><span class="cta-ring r2"></span>
+      <h2>Seu sorriso merece um cuidado <i>de verdade</i>.</h2>
+      <p>Agende sua consulta com a Dra. Lidia Oliveira pelo WhatsApp e escolha o melhor horário.</p>
+      <div class="ctas">
+        <a class="btn btn-primary magnetic" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn btn-ghost magnetic" href="https://www.instagram.com/dra.lidiaoliveira_/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg>Instagram</a>
+      </div>
+    </div>
+    <div class="info">
+      <div data-up>
+        <h3><svg class="ic"><use href="#i-pin"/></svg>Endereço</h3>
+        <p><a class="u" href="https://www.google.com/maps/search/?api=1&amp;query=Consultorio+Odontologico+Dra.+Lidia+Oliveira+Setor+Leste+Q+40+Gama+DF" target="_blank" rel="noopener">Setor Leste, Quadra&nbsp;40<br>Gama · Brasília – DF<br>72465-430</a></p>
+        <a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Consultorio+Odontologico+Dra.+Lidia+Oliveira+Setor+Leste+Q+40+Gama+DF" target="_blank" rel="noopener">Como chegar →</a>
+      </div>
+      <div data-up id="hoursCard">
+        <h3><svg class="ic"><use href="#i-clock"/></svg>Horários</h3>
+        <ul class="hours">
+          <li data-day="1"><span>Segunda</span><span>8h – 19h</span></li>
+          <li data-day="2"><span>Terça</span><span>8h – 19h</span></li>
+          <li data-day="3"><span>Quarta</span><span>8h – 19h</span></li>
+          <li data-day="4"><span>Quinta</span><span>8h – 19h</span></li>
+          <li data-day="5"><span>Sexta</span><span>8h – 19h</span></li>
+          <li data-day="6"><span>Sábado</span><span>8h – 14h</span></li>
+          <li data-day="0"><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+        <span class="pill"><span class="dot"></span><span data-status-full>—</span></span>
+      </div>
+      <div data-up>
+        <h3><svg class="ic"><use href="#i-phone"/></svg>Contato</h3>
+        <p><a class="u" href="https://wa.me/5561982177490" target="_blank" rel="noopener">(61) 98217-7490</a> · WhatsApp<br><a class="u" href="https://www.instagram.com/dra.lidiaoliveira_/" target="_blank" rel="noopener">@dra.lidiaoliveira_</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Consultório Odontológico Dra. Lidia Oliveira · Gama – DF</span>
+    <a href="https://www.instagram.com/dra.lidiaoliveira_/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg>@dra.lidiaoliveira_</a>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5561982177490?text=Ol%C3%A1%2C%20Dra.%20Lidia!%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg width="28" height="28"><use href="#i-wa"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(pointer:fine)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // aberto agora? (horário de Brasília): seg–sex 8h–19h, sáb 8h–14h
+  const HOURS = {1:[480,1140],2:[480,1140],3:[480,1140],4:[480,1140],5:[480,1140],6:[480,840]};
+  const NAMES = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  const fmt = m => Math.floor(m / 60) + 'h' + (m % 60 ? String(m % 60).padStart(2, '0') : '');
+  function status(){
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', {timeZone:'America/Sao_Paulo', weekday:'short', hour:'2-digit', minute:'2-digit', hourCycle:'h23'}).formatToParts(new Date()).map(x => [x.type, x.value]));
+    const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), m = +p.hour * 60 + +p.minute, t = HOURS[day];
+    if (t && m >= t[0] && m < t[1]) return {day, open:true, label:'Aberto agora', sub:'fecha às ' + fmt(t[1])};
+    if (t && m < t[0]) return {day, open:false, label:'Fechado agora', sub:'abre hoje às ' + fmt(t[0])};
+    for (let i = 1; i <= 7; i++) { const d = (day + i) % 7; if (HOURS[d]) return {day, open:false, label:'Fechado agora', sub:'abre ' + (i === 1 ? 'amanhã' : NAMES[d]) + ' às ' + fmt(HOURS[d][0])}; }
+  }
+  function paint(){
+    const s = status(), hero = document.getElementById('heroStatus'), card = document.getElementById('hoursCard');
+    hero.classList.toggle('is-open', s.open);
+    hero.querySelector('[data-status-label]').textContent = s.label;
+    hero.querySelector('[data-status-sub]').textContent = s.sub;
+    card.classList.toggle('is-open', s.open);
+    card.querySelector('[data-status-full]').textContent = s.label + ' · ' + s.sub;
+    card.querySelectorAll('[data-day]').forEach(li => li.classList.toggle('today', +li.dataset.day === s.day));
+  }
+  paint(); setInterval(paint, 60000);
+
+  // nav
+  const nav = document.getElementById('nav'), burger = document.getElementById('burger');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+  burger.addEventListener('click', () => burger.setAttribute('aria-expanded', nav.classList.toggle('open')));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }));
+
+  // comparador antes/depois (21st.dev style)
+  const cmp = document.getElementById('compare'), cmpRange = document.getElementById('cmpRange');
+  const setPos = v => { cmp.style.setProperty('--pos', v + '%'); cmpRange.value = v; };
+  cmpRange.addEventListener('input', e => setPos(+e.target.value));
+  let dragging = false;
+  const fromPointer = e => { const r = cmp.getBoundingClientRect(); setPos(Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100))); };
+  cmp.addEventListener('pointerdown', e => { dragging = true; cmp.setPointerCapture(e.pointerId); fromPointer(e); e.preventDefault(); });
+  cmp.addEventListener('pointermove', e => { if (dragging) fromPointer(e); });
+  ['pointerup', 'pointercancel'].forEach(t => cmp.addEventListener(t, () => dragging = false));
+
+  // spotlight nos cards (21st.dev style)
+  if (fine) document.querySelectorAll('.svc-card').forEach(c => c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }));
+
+  if (reduce || !window.gsap) { document.documentElement.classList.add('no-gsap'); return; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // GSAP: entrada do hero
+  const title = document.getElementById('heroTitle');
+  [...title.childNodes].forEach(n => {
+    if (n.nodeType === 3 && n.textContent.trim()) {
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(t => {
+        if (!t) return;
+        if (/^\s+$/.test(t)) frag.append(t);
+        else { const s = document.createElement('span'); s.className = 'w'; s.textContent = t; frag.append(s); }
+      });
+      n.replaceWith(frag);
+    }
+  });
+  title.querySelector('.smile-word').classList.add('w');
+  const tl = gsap.timeline({defaults:{ease:'expo.out'}});
+  tl.from('#heroTitle .w', {yPercent:110, opacity:0, rotate:3, filter:'blur(6px)', duration:1.1, stagger:.07})
+    .from('[data-hero]', {y:30, opacity:0, duration:1, stagger:.12}, '-=.7')
+    .from('.arch-frame', {clipPath:'inset(100% 0 0 0 round 999px 999px 24px 24px)', duration:1.4, ease:'power4.inOut'}, .2)
+    .from('.float-card', {y:24, opacity:0, scale:.94, duration:.9, stagger:.15}, '-=.5');
+
+  // anime.js: sorriso desenhado sob a palavra
+  if (window.anime) {
+    anime({targets:'#smilePath', strokeDashoffset:[anime.setDashoffset, 0], duration:1400, delay:900, easing:'easeInOutCubic'});
+    // ícones dos tratamentos "pulam" ao entrar
+    ScrollTrigger.create({trigger:'#track', start:'top 80%', once:true, onEnter:() =>
+      anime({targets:'.svc-card .ic-big', scale:[0, 1], rotate:['-25deg', '0deg'], delay:anime.stagger(110), duration:900, easing:'easeOutBack'})});
+    // demonstração do comparador
+    ScrollTrigger.create({trigger:cmp, start:'top 70%', once:true, onEnter:() => {
+      const o = {v:50};
+      anime({targets:o, v:[50, 20, 80, 50], duration:2600, easing:'easeInOutSine', update:() => setPos(o.v)});
+    }});
+  }
+
+  // parallax das fotos
+  gsap.to('#heroImg', {yPercent:-12, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+  gsap.fromTo('#careImg', {yPercent:-8}, {yPercent:8, ease:'none', scrollTrigger:{trigger:'.care', start:'top bottom', end:'bottom top', scrub:true}});
+
+  // citação: entra suave e os destaques "pintam" em sequência
+  const qtl = gsap.timeline({scrollTrigger:{trigger:'#quote', start:'top 75%', once:true}, defaults:{ease:'expo.out'}});
+  qtl.from('.quote-mark', {scale:.4, rotate:-20, opacity:0, duration:.9})
+     .from('.quote blockquote', {y:28, opacity:0, duration:1.1}, '-=.6')
+     .fromTo('.quote mark', {backgroundSize:'0% 100%'}, {backgroundSize:'100% 100%', duration:.9, stagger:.25, ease:'power3.inOut'}, '-=.5')
+     .from('.quote figcaption, .pillars li', {y:16, opacity:0, duration:.8, stagger:.1}, '-=.5');
+
+  // tratamentos: trilho horizontal fixado (desktop)
+  const mm = gsap.matchMedia();
+  mm.add('(min-width:961px)', () => {
+    const sec = document.getElementById('tratamentos'), track = document.getElementById('track');
+    sec.classList.add('horizontal');
+    const dist = () => { const left = track.parentElement.getBoundingClientRect().left; return Math.max(0, left + track.scrollWidth - innerWidth + Math.max(20, (innerWidth - 1200) / 2)); };
+    const tw = gsap.to(track, {x:() => -dist(), ease:'none', scrollTrigger:{trigger:sec, start:'top top', end:() => '+=' + dist(), pin:true, scrub:.6, invalidateOnRefresh:true}});
+    return () => { sec.classList.remove('horizontal'); tw.scrollTrigger && tw.scrollTrigger.kill(); gsap.set(track, {clearProps:'x'}); };
+  });
+
+  // revelar blocos
+  gsap.utils.toArray('[data-up]').forEach(el => gsap.from(el, {y:40, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 88%', once:true}}));
+
+  // botões magnéticos
+  if (fine) document.querySelectorAll('.magnetic').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', {duration:.4, ease:'power3'}), yTo = gsap.quickTo(b, 'y', {duration:.4, ease:'power3'});
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .25); yTo((e.clientY - r.top - r.height / 2) * .35); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+})();
+</script>
+</body>
+</html>
